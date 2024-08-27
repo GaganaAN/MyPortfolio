@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #3793ac;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ol {
+            margin: 20px auto;
+            padding: 0;
+            max-width: 600px;
+            list-style-position: inside;
+        }
+
+        li {
+            background: #ffffff;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #3793ac;
+            font-size: 1.2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-description {
+            display: none;
+            margin: 10px 0 20px 20px;
+            padding: 10px;
+            background-color: #e0f7fa;
+            border-left: 5px solid #00796b;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        .next-page-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .next-page-button a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #3793ac;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .next-page-button a:hover {
+            background-color: #2a6f81;
+            transform: scale(1.05);
+        }
+
+        .next-page-button a::after {
+            content: '→';
+            margin-left: 10px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('li');
+            projects.forEach(project => {
+                project.addEventListener('click', function() {
+                    const description = this.querySelector('.project-description');
+                    description.style.display = description.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h2>PROJECTS</h2>
+    </div>
+    <div class="content">
+        <p>Here are some of my projects:</p>
+        <ol type="1">
+            <li>
+                Tourism Management System
+                <div class="project-description">
+                    A website capable of storing and efficiently and managing tourism operations, including user bookings,inquiries,
+                    issues, and tour packages, with dedicated database tables for administrators, bookings,inquiries, issues, website
+                    pages, tour packages, and registered users
+                </div>
+            </li>
+            <li>
+                Medicinal and Toxic Plant Classification System
+                <div class="project-description">
+                    A system that capable of classify the medicinal and toxic plant by analyzing uploaded images,It determines
+                    whether a plant is medicinal or toxic, providing usage recommendations for medicinal plants and indicating which
+                    parts are toxic for harmful ones. This system aids in safe and informed plant identification and usage.
+                </div>
+            </li>
+            <li>
+                Plant Disease Detection System
+                <div class="project-description">
+                    Asystem that capable of identifying the plant diseases by analyzing uploaded images, providing the
+                    disease name along with the accuracy of the diagnosis.
+                </div>
+            </li>
+        </ol>
+        <p>* click on the title for description</p>
+        <div class="next-page-button">
+            <a href="achievements.html">Go to Achievements</a>
+        </div>
+    </div>
+</body>
+</html>
